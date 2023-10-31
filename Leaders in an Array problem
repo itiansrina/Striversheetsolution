@@ -1,0 +1,18 @@
+import java.util.*;
+public class Solution {
+    public static List< Integer > superiorElements(int []a) {
+      List<Integer>result=new ArrayList<>();
+      int superiorElements=a[a.length-1];
+      result.add(superiorElements);
+      for(int i=a.length-2;i>=0;i--)
+      {
+          if(a[i]>superiorElements)
+          {
+              result.add(a[i]);
+              superiorElements=a[i];
+          }
+      }
+      Collections.sort(result);
+      return result;
+    }
+}
